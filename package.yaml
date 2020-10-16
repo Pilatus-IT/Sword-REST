@@ -1,0 +1,45 @@
+name:        Sword-REST
+version:     0.1.0
+
+synopsis:    'A REST API for deploying Sword contracts'
+description: 'A REST API for deploying Sword contracts'
+category:    Ethereum, Finance, Network, Language
+license:     MIT
+
+homepage:    https://github.com/Pilatus-IT/Sword-REST
+author:      Thorkil Vaerge, Simon Shine
+maintainer:  shreddedglory@gmail.com
+copyright:   2020 Pilatus IT
+
+dependencies:
+  - base
+  - aeson
+  - servant
+  - servant-server
+  - text
+  - bytestring
+  - containers
+  - optparse-generic
+  - Sword
+
+library:
+  source-dirs: src
+
+executable:
+  main: Main.hs
+  source-dirs: src
+  dependencies:
+    - Sword-REST
+
+tests:
+  test:
+    main: test.hs
+    source-dirs: test
+    dependencies:
+      - Sword-REST
+      - tasty
+      - tasty-discover
+      - tasty-hspec
+      - tasty-hedgehog
+      - hedgehog
+      - hspec

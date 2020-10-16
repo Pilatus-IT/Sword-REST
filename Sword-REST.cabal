@@ -1,0 +1,83 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: d98a298925aab3f7442a503cbe34b1a7b93de2f04d963d61b99cafee1d2f44bd
+
+name:           Sword-REST
+version:        0.1.0
+synopsis:       A REST API for deploying Sword contracts
+description:    A REST API for deploying Sword contracts
+category:       Ethereum, Finance, Network, Language
+homepage:       https://github.com/Pilatus-IT/Sword-REST
+author:         Thorkil Vaerge, Simon Shine
+maintainer:     shreddedglory@gmail.com
+copyright:      2020 Pilatus IT
+license:        MIT
+build-type:     Simple
+
+library
+  exposed-modules:
+      Main
+  other-modules:
+      Paths_Sword_REST
+  hs-source-dirs:
+      src
+  build-depends:
+      Sword
+    , aeson
+    , base
+    , bytestring
+    , containers
+    , optparse-generic
+    , servant
+    , servant-server
+    , text
+  default-language: Haskell2010
+
+executable Sword-REST
+  main-is: Main.hs
+  other-modules:
+      Paths_Sword_REST
+  hs-source-dirs:
+      src
+  build-depends:
+      Sword
+    , Sword-REST
+    , aeson
+    , base
+    , bytestring
+    , containers
+    , optparse-generic
+    , servant
+    , servant-server
+    , text
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: test.hs
+  other-modules:
+      Paths_Sword_REST
+  hs-source-dirs:
+      test
+  build-depends:
+      Sword
+    , Sword-REST
+    , aeson
+    , base
+    , bytestring
+    , containers
+    , hedgehog
+    , hspec
+    , optparse-generic
+    , servant
+    , servant-server
+    , tasty
+    , tasty-discover
+    , tasty-hedgehog
+    , tasty-hspec
+    , text
+  default-language: Haskell2010
