@@ -21,13 +21,14 @@ dependencies:
   - containers
   - optparse-generic
   - Sword
+  - warp
 
 library:
   source-dirs: src
 
 executable:
   main: Main.hs
-  source-dirs: src
+  source-dirs: app
   dependencies:
     - Sword-REST
 

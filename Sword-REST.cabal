@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d98a298925aab3f7442a503cbe34b1a7b93de2f04d963d61b99cafee1d2f44bd
+-- hash: e3ea3200d7ca7e4e38f6ee2353ff487b95f7ac333202f022b1ac001afdaa4884
 
 name:           Sword-REST
 version:        0.1.0
@@ -20,7 +20,9 @@ build-type:     Simple
 
 library
   exposed-modules:
-      Main
+      Sword.API
+      Sword.Compiler
+      Sword.Types
   other-modules:
       Paths_Sword_REST
   hs-source-dirs:
@@ -35,6 +37,7 @@ library
     , servant
     , servant-server
     , text
+    , warp
   default-language: Haskell2010
 
 executable Sword-REST
@@ -42,7 +45,7 @@ executable Sword-REST
   other-modules:
       Paths_Sword_REST
   hs-source-dirs:
-      src
+      app
   build-depends:
       Sword
     , Sword-REST
@@ -54,6 +57,7 @@ executable Sword-REST
     , servant
     , servant-server
     , text
+    , warp
   default-language: Haskell2010
 
 test-suite test
@@ -80,4 +84,5 @@ test-suite test
     , tasty-hedgehog
     , tasty-hspec
     , text
+    , warp
   default-language: Haskell2010
